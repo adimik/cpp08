@@ -1,3 +1,6 @@
+#ifndef SPAN_HPP
+#define SPAN_HPP
+
 #include <vector>
 #include <stdexcept>
 #include <algorithm>
@@ -5,13 +8,26 @@
 class Span
 {
 private:
-    std::vector<int> numbers;
+	std::vector<int> numbers;
+	unsigned int N;
+
 public:
-    Span(unsigned int N);
-    ~Span();
-    Span& operator=(const Span& other);
-    Span(const Span& other);
-    void addNumber(int n);
-    int shortestSpan();
-    int longestSpan();
+	Span(unsigned int N);
+	~Span();
+	Span& operator=(const Span& other);
+	Span(const Span& other);
+	void addNumber(int n);
+	int shortestSpan();
+	int longestSpan();
+	template <typename Iterator>
+	void addNumbers(Iterator begin, Iterator end)
+	{
+		while (begin != end)
+		{
+			addNumber(*begin);
+			++begin;
+		}
+	}
 };
+
+#endif
