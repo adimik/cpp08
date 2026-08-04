@@ -1,4 +1,4 @@
-#include "../include/mutantStack.hpp"
+#include "../include/MutantStack.hpp"
 #include <iostream>
 #include <list>
 

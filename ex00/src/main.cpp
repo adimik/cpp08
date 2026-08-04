@@ -17,45 +17,34 @@
 
 int main(void)
 {
-	// Test 1: Vector with found element
-	std::vector<int> vec;
-	vec.push_back(1);
-	vec.push_back(2);
-	vec.push_back(3);
-	vec.push_back(4);
-	vec.push_back(5);
+	std::vector<int> v;
+	v.push_back(4);
+	v.push_back(8);
+	v.push_back(15);
+	v.push_back(16);
 
-	std::vector<int>::iterator it = easyfind(vec, 3);
-	if (it != vec.end())
-		std::cout << "Found: " << *it << std::endl;
+	std::vector<int>::iterator it = easyfind(v, 15);
+	if (it != v.end())
+		std::cout << *it << std::endl;
 	else
-		std::cout << "Not found" << std::endl;
+		std::cout << "not found" << std::endl;
 
-	// Test 2: Vector with not found element
-	it = easyfind(vec, 10);
-	if (it != vec.end())
-		std::cout << "Found: " << *it << std::endl;
+	it = easyfind(v, 42);
+	if (it != v.end())
+		std::cout << *it << std::endl;
 	else
-		std::cout << "Not found in vector" << std::endl;
+		std::cout << "not found" << std::endl;
 
-	// Test 3: List with found element
-	std::list<int> lst;
-	lst.push_back(10);
-	lst.push_back(20);
-	lst.push_back(30);
+	std::list<int> l;
+	l.push_back(1);
+	l.push_back(2);
+	l.push_back(3);
 
-	std::list<int>::iterator lit = easyfind(lst, 20);
-	if (lit != lst.end())
-		std::cout << "Found in list: " << *lit << std::endl;
+	std::list<int>::iterator lit = easyfind(l, 2);
+	if (lit != l.end())
+		std::cout << *lit << std::endl;
 	else
-		std::cout << "Not found in list" << std::endl;
-
-	// Test 4: List with not found element
-	lit = easyfind(lst, 99);
-	if (lit != lst.end())
-		std::cout << "Found in list: " << *lit << std::endl;
-	else
-		std::cout << "Not found in list" << std::endl;
+		std::cout << "not found" << std::endl;
 
 	return (0);
 }
